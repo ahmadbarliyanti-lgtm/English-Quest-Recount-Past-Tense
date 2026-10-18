@@ -1,0 +1,178 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>English Quest · Recount &amp; Past Tense</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#08080a;--p:#14141a;--tx:#f4ecd4;--mu:#a89c78;--g:#e7b93c;--g2:#ffdf80;--bd:#3a3220;--ok:#4cd68a;--no:#ff6b6b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme=light]{--bg:#faf6ea;--p:#fff;--tx:#1b1608;--mu:#6d5f35;--g:#b8860b;--g2:#8a6400;--bd:#e3d6a8}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{background:radial-gradient(circle at 80% -10%,rgba(231,185,60,.15),transparent 50%),var(--bg);color:var(--tx);font:15px/1.6 Inter,system-ui,sans-serif;user-select:none;-webkit-user-select:none}
+input,select{user-select:text;-webkit-user-select:text}
+h1,h2,h3,.o{font-family:Orbitron,Inter,sans-serif;letter-spacing:.06em}
+.gold{background:linear-gradient(90deg,var(--g),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent}
+button,select,input{font:inherit;color:var(--tx)}
+.btn{background:linear-gradient(135deg,var(--g),var(--g2));color:#1a1403;border:0;border-radius:10px;padding:9px 18px;font-weight:600;cursor:pointer;box-shadow:0 0 18px rgba(231,185,60,.3)}
+.btn.s{background:transparent;color:var(--g);border:1px solid var(--g);box-shadow:none;padding:6px 12px}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.card{background:var(--p);border:1px solid var(--bd);border-radius:16px;padding:20px;margin-bottom:16px}
+input,select{background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:8px 10px;max-width:100%}
+input:focus,select:focus{outline:2px solid var(--g)}
+#login{min-height:100%;display:grid;place-items:center;padding:20px}
+#login .card{width:min(400px,100%);text-align:center;box-shadow:0 0 60px rgba(231,185,60,.15)}
+#login input{width:100%;margin:6px 0}
+#app{display:none;height:100%;grid-template-columns:270px 1fr}
+#side{background:var(--p);border-right:1px solid var(--bd);padding:18px 12px;overflow:auto;display:flex;flex-direction:column;gap:4px}
+.nav{padding:10px 12px;border-radius:10px;cursor:pointer;border:1px solid transparent;display:flex;justify-content:space-between;gap:8px;font-size:14px}
+.nav:hover,.nav.on{border-color:var(--g);background:rgba(231,185,60,.1)}
+#main{overflow:auto;display:flex;flex-direction:column}
+#top{display:flex;gap:10px;align-items:center;justify-content:flex-end;padding:12px 22px;border-bottom:1px solid var(--bd);flex-wrap:wrap;position:sticky;top:0;background:var(--bg);z-index:5}
+#top .sp{flex:1}#menu{display:none}
+#view{padding:22px;max-width:900px;width:100%;margin:0 auto}
+.q{padding:10px 0;border-bottom:1px dashed var(--bd)}
+.bank span{display:inline-block;margin:3px;padding:3px 12px;border:1px solid var(--g);border-radius:8px;color:var(--g)}
+.opt{display:block;padding:3px 0;cursor:pointer}
+.good{color:var(--ok)}.bad{color:var(--no)}
+.pas{white-space:pre-line;border-left:3px solid var(--g);padding-left:14px;color:var(--tx)}
+table.gr{border-collapse:collapse;margin:8px 0}table.gr td{border:1px solid var(--bd);width:30px;height:30px;text-align:center;font-weight:600;color:var(--g)}
+.tm{font-family:Orbitron;color:var(--g);font-size:18px}.tm.w{color:var(--no)}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--g);color:#111;padding:10px 18px;border-radius:10px;display:none;z-index:50}
+#cm{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;place-items:center;z-index:40;padding:14px;overflow:auto}
+.cert{background:#0b0b0d;color:#f4ecd4;border:6px double #e7b93c;padding:34px 24px;text-align:center;width:min(760px,100%);box-shadow:0 0 50px rgba(231,185,60,.4)}
+.cert h1{font-size:28px;margin:6px}.cert .n{font:700 30px Orbitron,serif;color:#ffdf80;margin:10px 0;border-bottom:1px solid #e7b93c;display:inline-block;padding:0 20px}
+@media(max-width:760px){#app{grid-template-columns:1fr}#side{position:fixed;inset:0 25% 0 0;z-index:20;transform:translateX(-100%);transition:.25s}#side.open{transform:none}#menu{display:inline-block}}
+@media print{body *{visibility:hidden}#cm,#cm *{visibility:visible}#cm{position:absolute;background:#fff;display:block!important}.pb{display:none!important}}
+</style></head><body>
+<div id="login"><div class="card"><h1 class="gold">ENGLISH QUEST</h1><p id="ls" style="color:var(--mu)"></p>
+<input id="u" autocomplete="off"><input id="p" type="password" autocomplete="off"><p id="le" class="bad" style="min-height:22px;margin:4px"></p>
+<button class="btn" id="lb" style="width:100%"></button>
+<p style="margin-top:16px;font-size:13px;color:var(--mu)">© Ahmad Budi Leksono</p></div></div>
+<div id="app"><aside id="side"></aside><section id="main"><div id="top"><button class="btn s" id="menu">☰</button><span class="sp"></span><span id="clk" class="o"></span><select id="lg"><option value="id">Indonesia</option><option value="en">English</option></select><button class="btn s" id="th"></button></div><div id="view"></div></section></div>
+<div id="toast"></div><div id="cm"></div>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const TX={id:{ls:'Masuk untuk memulai',u:'Nama pengguna',p:'Kata sandi',lb:'Masuk',le:'Nama pengguna atau kata sandi salah',idn:'Identitas Murid',nm:'Nama',cl:'Kelas',no:'Nomor Presensi',md:'Asal Madrasah',sv:'Simpan Identitas',saved:'Identitas diperbarui — riset & pengacakan soal otomatis dijalankan.',need:'Lengkapi identitas terlebih dahulu.',act:'Aktivitas',left:'Sisa waktu',sub:'Kumpulkan',score:'Skor',cert:'Lihat Sertifikat',retry:'Ulangi',fail:'Skor minimal 80 untuk mendapat sertifikat.',lo:'Keluar',ta:'Waktu habis — jawaban dikumpulkan otomatis.',pr:'Cetak',cl2:'Tutup',ok:'Benar',kunci:'Salin / tempel dinonaktifkan.',by:'Dibuat oleh',wl:'Selamat datang di English Quest. Isi identitas lalu kerjakan 8 aktivitas (40 menit per aktivitas, skor minimal 80 untuk sertifikat).',dark:'🌙 Gelap',light:'☀️ Terang',cc:'CERTIFICATE OF ACHIEVEMENT',cd:'diberikan kepada',cf:'telah menyelesaikan aktivitas',cs:'dengan skor',st:['Belum','Berjalan','Selesai']},
+en:{ls:'Sign in to start',u:'Username',p:'Password',lb:'Sign in',le:'Wrong username or password',idn:'Student Identity',nm:'Name',cl:'Class',no:'Attendance No.',md:'Madrasah',sv:'Save Identity',saved:'Identity updated — automatic research & shuffling applied.',need:'Please complete the identity first.',act:'Activity',left:'Time left',sub:'Submit',score:'Score',cert:'View Certificate',retry:'Retry',fail:'You need at least 80 to get a certificate.',lo:'Log out',ta:'Time is up — answers submitted automatically.',pr:'Print',cl2:'Close',ok:'Correct',kunci:'Copy / paste is disabled.',by:'Created by',wl:'Welcome to English Quest. Fill in your identity, then complete 8 activities (40 minutes each, minimum score 80 for a certificate).',dark:'🌙 Dark',light:'☀️ Light',cc:'CERTIFICATE OF ACHIEVEMENT',cd:'is proudly presented to',cf:'for completing the activity',cs:'with a score of',st:['New','In progress','Done']}};
+const A=[
+{t:'Past Simple: A Day at the Beach',i:{id:'Lengkapi teks dengan kata yang tepat.',en:'Complete the text with the correct words.'},k:'para',x:"On Sunday, my friend and I [[went]] to the beach. When we [[arrived]] at the beach, we [[played]] in the water. Then we [[ate]] our lunch. We [[brought]] delicious food to eat. After [[had]] our lunch, we [[built]] a sandcastle. Later, it [[began]] to rain. So we [[packed]] all our things and went home. We were so [[happy]] about spending our holiday at the beach."},
+{t:'Expressions & Recount Text',i:{id:'Pilih jawaban yang benar.',en:'Choose the correct answer.'},k:'mc',x:[
+["Maryam: Do you want to come to my house? We can do our homework together.\nNancy: ….",["Congratulations!","This is for you.","Yes, certainly I will come.","That’s true."],2],
+["Mr. Ali: Hasan, have you had your dinner yet? Come to join me.\nHasan: ….",["I’m very sorry, I can’t.","I don’t agree with you.","I disagree with you.","Wow, you are very clever."],0],
+["Mirza: I won the chess competition last week.\nHamid: …!",["Congratulations!","I’m afraid, I can’t.","I don’t agree with you.","Sure."],0],
+["Vivin: Look at Siti! Her veil is new.\nFatima: ….",["She is beautiful.","I’m terribly sorry. I don’t think I can’t.","That’s a good idea.","Please, forgive me."],0],
+["The expression used to congratulate someone, except ….",["Terrific!","Well done!","Fantastic!","Thank you very much."],3],
+["A recount text consists of ….",["Introduction and description","Orientation, events, and reorientation","Aim, methods, and steps","General classification and description"],1],
+["The example of recount text is ….",["The story of Cinderella","The Legend of Sangkuriang","The story of your past experience","The recipe of how to make avocado juice"],2],
+["The word “where” is used to ask about ….",["Subject","Object","Place","Time"],2],
+["Teacher: … is absent today?\nStudents: Alex is absent today, sir.",["Who","How","Where","What"],0],
+["Cassandra: … did you come here?\nQonita: I came here at 9 o’clock in the morning.",["When","Why","Who","Where"],0]]},
+{t:'Reading: An Unforgettable Trip to Bromo',i:{id:'Baca teks recount lalu jawab dengan singkat (bahasa Inggris).',en:'Read the recount text and answer briefly.'},k:'tx',
+p:"Last holiday, my friends and I decided to go to Bromo. We left Surabaya in the afternoon. After a very long and tiring trip, we finally arrived in Probolinggo. We arrived at the hotel at 2 p.m. and immediately were ready for our trip to the mountain. Bromo actually belongs to the Tengger group. This group consists of four mountains, namely Bromo, Penanjakan, Batok, and Widodaren.\n\nDriving on our 1997 Suzuki Carry, we climbed Penanjakan to enjoy the sunrise. It was amazing! From Penanjakan, we left for Bromo. During our trip, a horrible thing happened. Although Bromo was lower than Penanjakan, our trip proved to be very difficult. While our car was slowly climbing the mountain, it suddenly became stuck. It slowly moved backward. We quickly jumped out of the car. The driver asked us to push the car, and we did it accordingly. We pushed and pushed the car but the engine refused to start. When we were too tired to push, we stopped and leaned our backs to the car to stop it sliding backward. It was horrible. All of us were desperate. After thirty minutes, the engine worked again. We cried in happiness. Then we continued our journey.\n\nWe spent an hour in Bromo. I climbed the mountain on horseback and enjoyed the beauty of the smoky crater. However, most of my friends refused to climb the mountain. They were too tired to do so. Pushing the car made them exhausted.",
+x:[["The text is about ….",['bromo|trip'],1,"A trip to Bromo"],["When did the writer and his friends leave Surabaya?",['afternoon'],1,"In the afternoon"],["Where is Bromo located?",['java|tengger|probolinggo'],1,"East Java (Tengger)"],["When did the writer and his friends arrive at the hotel?",['2|two'],1,"At 2 p.m."],["Bromo actually belongs to ….",['tengger'],1,"The Tengger group"],["Tengger group consists of four mountains. What are they?",['bromo','penanjakan','batok','widodaren'],3,"Bromo, Penanjakan, Batok, Widodaren"],["What kind of car did the writer and his friends drive?",['suzuki|carry'],1,"1997 Suzuki Carry"],["Why did the writer and his friends jump out of the car?",['push|stuck|backward'],1,"To push the car"],["What is the meaning of the word “desperate”?",['hopeless|despair|sad|no hope|helpless|worried'],1,"Hopeless"],["What is the antonym of the word “happiness”?",['sad|unhappy|sorrow|misery'],1,"Sadness"]]},
+{t:'Past Simple: Word Search',i:{id:'Tulis bentuk past tense dari kata kerja berikut (temukan di kotak huruf).',en:'Write the past tense of each verb (find them in the grid).'},k:'tx',
+g:["BOUGHTQWERHS","ETYMYRANEUND","GHBHDITDGTTV","RWROTEJERNGF","HJOMKDLRJCJE","ELKYCYWAHSHM","NBEGANAQCAKN","AWUHUVMCUWTY","NRDJGTEFRDOU","HAUVHKYMHUMI","KLEFTDKGOZTK","WEDRWYESOLDJ"],
+x:[["1. buy",['^bought$'],1,"bought"],["2. run",['^ran$'],1,"ran"],["3. leave",['^left$'],1,"left"],["4. see",['^saw$'],1,"saw"],["5. sell",['^sold$'],1,"sold"],["6. break",['^broke$'],1,"broke"],["7. catch",['^caught$'],1,"caught"],["8. begin",['^began$'],1,"began"],["9. write",['^wrote$'],1,"wrote"],["10. try",['^tried$'],1,"tried"]]},
+{t:'Link Words',i:{id:'Pasangkan awal dan akhir kalimat.',en:'Match the beginnings and endings of the sentences.'},k:'mt',x:[["Jane was watching TV","when she heard a strange noise."],["My parents lived in Australia","before they moved to England."],["Sarah fell off her bike","and hurt her leg."],["Mark went to Canada last year","but he didn’t go to Toronto."],["Henry was swimming in the sea when","a shark suddenly appeared."]]},
+{t:'The Man in Black',i:{id:'Lengkapi teks dengan kata dari kotak.',en:'Complete the text with the words from the box.'},k:'para',x:"I [[was]] waiting for Jane outside the cinema yesterday [[when]] a man ran past. He was [[wearing]] black trousers and a black jacket. The man [[looked]] around quickly and got into a sports car. He was driving away when [[suddenly]] a police car came around the corner and [[crashed]] into his car. The man got out of the car, ran down the street and [[climbed]] over a wall. The two policemen got out [[and]] ran after him. Five minutes later the two policemen came back [[but]] they didn’t have the man. I [[read]] in the newspaper this morning that the police are still looking for the man!"},
+{t:'Past Continuous & Past Simple',i:{id:'Pilih kata yang benar.',en:'Click the correct word.'},k:'mc',x:[
+["I …. dinner when I heard the good news about Mark.",["was having","had","having"],0],["Emma was skiing when she …. her leg.",["was breaking","break","broke"],2],["When they …. home, Tim was cooking.",["was arriving","were arriving","arrived"],2],["Kate …. a new dress when I saw her in the street.",["wore","was wearing","wear"],1],["We were playing football when it …. to rain.",["began","begins","was beginning"],0]]},
+{t:'Past Simple: Affirmative & Negative',i:{id:'Tulis past simple dari kata kerja (positif/negatif sesuai petunjuk huruf).',en:'Write the past simple (affirmative/negative as the hint shows).'},k:'tx',b:'buy · begin · phone · go · break · not leave · not see · not catch · send · not sell',
+x:[["I d********* John at the cinema yesterday. He wasn’t there.",['^(didn.?t|did not) see$'],1,"didn’t see"],["Claire b***** that jacket in the sale. It only cost ten pounds.",['^bought$'],1,"bought"],["I ran after the bus but I d*********** it!",['^(didn.?t|did not) catch$'],1,"didn’t catch"],["We w*** to Germany on holiday last year.",['^went$'],1,"went"],["Paul d*********** the party until 2am. His dad was very angry.",['^(didn.?t|did not) leave$'],1,"didn’t leave"]]}];
+let L='id',S=null,cur='home',user=0;
+const T=k=>TX[L][k];
+const hash=s=>{let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0};
+const rng=a=>()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296};
+const shuf=(a,r)=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const fresh=()=>({id:{nm:'',cl:'',no:'',md:''},key:'',seed:1,a:A.map(()=>({at:0,s:null,e:null,done:0,sc:null,ans:{}}))});
+S=fresh();
+function toast(m){const t=$('#toast');t.textContent=m;t.style.display='block';setTimeout(()=>t.style.display='none',3200)}
+// ---- build activity (deterministic from identity seed) ----
+function build(i){
+ const a=A[i],st=S.a[i],r=rng(S.seed+i*97+st.at*13),U=[];let h='';
+ const dis=st.done?'disabled':'';
+ const val=k=>esc(st.ans[k]??'');
+ const mark=(n,ok,ans)=>st.done?` <b class="${ok?'good':'bad'}">${ok?'✓':'✗ '+esc(ans)}</b>`:'';
+ if(a.k=='para'){
+  const w=[...a.x.matchAll(/\[\[(.*?)\]\]/g)].map(m=>m[1]),bank=shuf(w,r);let n=0;
+  h+=`<div class="bank">${bank.map(b=>`<span>${b}</span>`).join('')}</div><p style="line-height:2.4">`+a.x.replace(/\[\[(.*?)\]\]/g,(m,ans)=>{const k='p'+n++;U.push({k,ok:v=>v==ans,ans});
+   return `<select data-k="${k}" ${dis}><option value="">…</option>${bank.map(b=>`<option ${st.ans[k]==b?'selected':''}>${b}</option>`).join('')}</select>${mark(k,st.ans[k]==ans,ans)}`})+'</p>';
+ }
+ if(a.k=='mc'){
+  shuf(a.x.map((x,j)=>j),r).forEach((j,n)=>{const [q,o,c]=a.x[j],k='m'+j,ord=shuf(o.map((_,z)=>z),r);U.push({k,ok:v=>v==c,ans:o[c]});
+   h+=`<div class="q"><b>${n+1}.</b> ${esc(q).replace(/\n/g,'<br>')}${mark(k,st.ans[k]==c,o[c])}${ord.map(z=>`<label class="opt"><input type="radio" name="${k}" data-k="${k}" value="${z}" ${st.ans[k]==z?'checked':''} ${dis}> ${esc(o[z])}</label>`).join('')}</div>`});
+ }
+ if(a.k=='tx'){
+  if(a.p)h+=`<div class="card pas">${esc(a.p)}</div>`;
+  if(a.b)h+=`<div class="bank"><span>${a.b}</span></div>`;
+  if(a.g)h+=`<table class="gr">${a.g.map(row=>`<tr>${[...row].map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table>`;
+  shuf(a.x.map((x,j)=>j),r).forEach((j,n)=>{if(a.g)j=n;const [q,ks,min,ans]=a.x[j],k='t'+j;
+   const ok=v=>{v=v.toLowerCase().replace(/[’`]/g,"'").trim();return ks.filter(z=>new RegExp(z,'i').test(v)).length>=min};
+   U.push({k,ok,ans});h+=`<div class="q">${a.g?'':(n+1)+'. '}${esc(q)}<br><input data-k="${k}" value="${val(k)}" autocomplete="off" ${dis} style="width:min(420px,100%);margin-top:4px">${mark(k,ok(st.ans[k]||''),ans)}</div>`});
+ }
+ if(a.k=='mt'){
+  const ends=shuf(a.x.map(x=>x[1]),r);
+  shuf(a.x.map((x,j)=>j),r).forEach((j,n)=>{const [q,e]=a.x[j],k='x'+j;U.push({k,ok:v=>v==e,ans:e});
+   h+=`<div class="q">${n+1}. ${esc(q)}<br><select data-k="${k}" ${dis}><option value="">…</option>${ends.map(z=>`<option ${st.ans[k]==z?'selected':''}>${esc(z)}</option>`).join('')}</select>${mark(k,st.ans[k]==e,e)}</div>`});
+ }
+ return{h,U};
+}
+const grade=i=>{const{U}=build(i),st=S.a[i];const c=U.filter(u=>u.ok(st.ans[u.k]??'')).length;return Math.round(c/U.length*100)};
+function submit(i,auto){const st=S.a[i];if(st.done)return;st.sc=grade(i);st.done=1;if(auto)toast(T('ta'));if(cur==i)show()}
+// ---- UI ----
+const stat=i=>{const s=S.a[i];return s.done?'✓ '+s.sc:s.s?'⏱':'·'};
+function side(){
+ $('#side').innerHTML=`<h2 class="gold" style="margin:4px 8px 14px">ENGLISH QUEST</h2><div class="nav ${cur=='home'?'on':''}" data-p="home">🏠 ${T('idn')}</div>`+A.map((a,i)=>`<div class="nav ${cur==i?'on':''}" data-p="${i}"><span>${i+1}. ${a.t}</span><span class="o" style="color:var(--g)">${stat(i)}</span></div>`).join('')+`<div style="flex:1"></div><div class="nav" id="lo">⎋ ${T('lo')}</div><div style="font-size:12px;color:var(--mu);padding:8px 12px">${T('by')} <b class="gold">Ahmad Budi Leksono</b></div>`;
+}
+function idOk(){const d=S.id;return d.nm&&d.cl&&d.no&&d.md}
+function show(){
+ side();$('#th').textContent=document.documentElement.dataset.theme=='light'?T('dark'):T('light');
+ const v=$('#view');
+ if(cur=='home'){const d=S.id;
+  v.innerHTML=`<h1 class="gold">${T('idn')}</h1><p style="color:var(--mu)">${T('wl')}</p><div class="card"><div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">${[['nm','nm'],['cl','cl'],['no','no'],['md','md']].map(([k,l])=>`<label>${T(l)}<br><input id="i_${k}" value="${esc(d[k])}" style="width:100%" autocomplete="off"></label>`).join('')}</div><p><button class="btn" id="sv">${T('sv')}</button></p><p style="color:var(--mu);font-size:13px">🔒 ${T('kunci')}</p></div>`;
+  return;}
+ const i=+cur,a=A[i],st=S.a[i];
+ if(!idOk()){toast(T('need'));cur='home';return show()}
+ if(!st.s){st.s=Date.now();st.e=st.s+40*60000}
+ const{h}=build(i);
+ v.innerHTML=`<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px"><h2 class="gold" style="margin:0">${T('act')} ${i+1}: ${a.t}</h2><div>${T('left')}: <span id="cd" class="tm"></span></div></div><p style="color:var(--mu)">${a.i[L]}</p><div class="card">${h}</div>
+ <div>${st.done?`<p class="o">${T('score')}: <span class="gold" style="font-size:26px">${st.sc}</span></p>${st.sc>=80?`<button class="btn" id="ce">🏆 ${T('cert')}</button>`:`<p class="bad">${T('fail')}</p>`} <button class="btn s" id="rt">${T('retry')}</button>`:`<button class="btn" id="sb">${T('sub')}</button>`}</div>`;
+ tick();
+}
+const p2=n=>String(n).padStart(2,'0');
+function tick(){
+ const n=new Date();$('#clk').textContent=`${p2(n.getHours())}:${p2(n.getMinutes())}:${p2(n.getSeconds())}`;
+ A.forEach((_,i)=>{const s=S.a[i];if(s.s&&!s.done&&Date.now()>=s.e)submit(i,1)});
+ if(cur!='home'){const s=S.a[+cur],c=$('#cd');if(c&&s.s&&!s.done){const r=Math.max(0,s.e-Date.now()),m=Math.floor(r/60000);c.textContent=`${p2(m)}:${p2(Math.floor(r/1000)%60)}`;c.className='tm'+(m<5?' w':'')}else if(c)c.textContent='--:--'}
+}
+function cert(i){
+ const d=S.id,s=S.a[i];
+ $('#cm').innerHTML=`<div><div class="cert"><div class="o" style="color:#e7b93c;letter-spacing:.3em">ENGLISH QUEST</div><h1 style="color:#ffdf80">${T('cc')}</h1><p>${T('cd')}</p><div class="n">${esc(d.nm)}</div><p>${T('cl')} ${esc(d.cl)} · ${T('no')} ${esc(d.no)}<br>${esc(d.md)}</p><p>${T('cf')}<br><b style="color:#ffdf80;font-size:18px">${A[i].t}</b></p><p>${T('cs')} <b style="color:#ffdf80;font-size:26px">${s.sc}</b>/100</p><p style="font-size:13px;color:#a89c78">${new Date().toLocaleDateString(L=='id'?'id-ID':'en-GB',{dateStyle:'long'})}<br>${T('by')} Ahmad Budi Leksono</p></div><p class="pb" style="text-align:center"><button class="btn" onclick="window.print()">🖨 ${T('pr')}</button> <button class="btn s" onclick="$('#cm').style.display='none'">${T('cl2')}</button></p></div>`;
+ $('#cm').style.display='grid';
+}
+// ---- events ----
+document.addEventListener('click',e=>{
+ const t=e.target,n=t.closest('.nav');
+ if(n&&n.id=='lo'){$('#app').style.display='none';$('#login').style.display='grid';$('#p').value='';return}
+ if(n&&n.dataset.p){cur=n.dataset.p=='home'?'home':+n.dataset.p;$('#side').classList.remove('open');show()}
+ if(t.id=='menu')$('#side').classList.toggle('open');
+ if(t.id=='sv'){const d={nm:$('#i_nm').value.trim(),cl:$('#i_cl').value.trim(),no:$('#i_no').value.trim(),md:$('#i_md').value.trim()};
+  if(!d.nm||!d.cl||!d.no||!d.md)return toast(T('need'));
+  const key=Object.values(d).join('|').toLowerCase();
+  if(key!=S.key){S=fresh();S.key=key;S.seed=hash(key);toast(T('saved'))}
+  S.id=d;show()}
+ if(t.id=='sb')submit(+cur);
+ if(t.id=='rt'){const s=S.a[+cur];s.at++;Object.assign(s,{s:null,e:null,done:0,sc:null,ans:{}});show()}
+ if(t.id=='ce')cert(+cur);
+ if(t.id=='th'){const r=document.documentElement;r.dataset.theme=r.dataset.theme=='light'?'dark':'light';show()}
+});
+document.addEventListener('input',e=>{const k=e.target.dataset.k;if(k&&cur!='home')S.a[+cur].ans[k]=e.target.value});
+document.addEventListener('change',e=>{const k=e.target.dataset.k;if(k&&cur!='home')S.a[+cur].ans[k]=e.target.value});
+$('#lg').onchange=e=>{L=e.target.value;document.documentElement.lang=L;lt();if($('#app').style.display=='grid')show()};
+// ---- anti copy/paste ----
+['copy','cut','paste','contextmenu','dragstart','drop'].forEach(ev=>document.addEventListener(ev,e=>{e.preventDefault();if(ev!='contextmenu')toast(T('kunci'))}));
+document.addEventListener('selectstart',e=>{if(!/INPUT|SELECT/.test(e.target.tagName||''))e.preventDefault()});
+document.addEventListener('keydown',e=>{const k=e.key.toLowerCase();if(((e.ctrlKey||e.metaKey)&&'cvxauspi'.includes(k))||k=='f12'||(e.ctrlKey&&e.shiftKey&&'ijc'.includes(k))||k=='printscreen'){e.preventDefault();toast(T('kunci'))}});
+// ---- login (credentials not shown anywhere on the page) ----
+function lt(){$('#ls').textContent=T('ls');$('#u').placeholder=T('u');$('#p').placeholder=T('p');$('#lb').textContent=T('lb')}
+function go(){if(btoa($('#u').value.trim())=='YWRtaW4='&&btoa($('#p').value)=='MTIz'){$('#le').textContent='';$('#login').style.display='none';$('#app').style.display='grid';cur='home';show()}else $('#le').textContent=T('le')}
+$('#lb').onclick=go;$('#p').onkeydown=e=>{if(e.key=='Enter')go()};
+lt();setInterval(tick,1000);
+</script></body></html>
